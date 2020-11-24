@@ -1,0 +1,30 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "my first nodejs test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../Course/Part2/phonebook/ && npm run build && cp -r build ../../../Course_backend/",
+    "deploy": " git push heroku master",
+    "deploy:full": "git add --all && git commit -m uibuild && npm run deploy",
+    "logs": "heroku logs -t",
+    "lint": "node_modules/.bin/eslint ."
+  },
+  "author": "petrosha",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "nodemon": "^2.0.6"
+  }
+}
